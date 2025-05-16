@@ -1,0 +1,16 @@
+server.modules = (
+    "mod_access",
+    "mod_simple_vhost"
+)
+server.stat-cache-engine = "simple"
+
+server.use-ipv6 = "enable"
+dir-listing.activate = "disable"
+dir-listing.exclude = ("/server2.com", "/server3.com")
+
+simple-vhost.server-root   = "/var/www/vhosts/"
+simple-vhost.default-host  = "server1.com"
+simple-vhost.document-root = "/htdocs/"
+
+include "conf.d/10-fastcgi.conf"
+include "conf.d/20-scgi.conf"

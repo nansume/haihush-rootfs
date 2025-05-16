@@ -1,0 +1,3 @@
+countin "0/admin" D 20000 admin
+countin "1/user1" D 20000 user1
+countin "2/user2" D 20000 user2

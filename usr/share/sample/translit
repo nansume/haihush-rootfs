@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+LIST=$(find . -maxdepth 2 -type d -regex '.*[![:print:]].*')
+
+for OLD in $LIST; do
+   NEW=$(printf "$OLD" |\
+   sed '
+   y|<alpabet-src>|<alpabet-dst>|;
+   s|[![:print:]]*||g')
+   mv -n "$OLD" "$NEW"
+   printf "${NEW}\n"
+done

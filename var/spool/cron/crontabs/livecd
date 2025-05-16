@@ -1,0 +1,4 @@
+# min  hour  day  month  weekday  command
+
+* */4 * * * /bin/ddns-ip-update
+* * * */2 * /bin/echo '0.0.0.0' > /home/clearnet/.lst/cache-ip

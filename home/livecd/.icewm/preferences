@@ -1,0 +1,11 @@
+KeyboardLayouts="us","de"
+TaskBarAtTop=1
+TaskBarShowCPUStatus=0
+TaskBarShowMEMStatus=0
+TaskBarShowMailboxStatus=0
+TaskBarShowNetStatus=0
+TimeFormat="%H:%M"
+WorkspaceNames=" 1 ", " 2 ", " 3 ", " 4 "
+MenuIconSize=24
+NormalButtonFontNameXft="sans-serif:size=16"
+SmallIconSize=24

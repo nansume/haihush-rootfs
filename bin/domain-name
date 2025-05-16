@@ -1,0 +1,23 @@
+#!/bin/sh
+# Copyright (C) 2023-2024 Artjom Slepnjov, Shellgen
+# compatible with Linux kernel (Linuxism)
+# Date: 2024-02-03 14:00 UTC - last change
+# It sample!
+
+set -- '/proc/sys/kernel/hostname' '/proc/sys/kernel/domainname'
+
+test -r "${1}" && IFS= read -r HOSTNAME < "${1}"
+test -r "${2}" && IFS= read -r DOMAINNAME < "${2}"
+
+
+test "X${USER}" = 'Xroot' &&
+case $(ext-ip) in
+  "xxx.xxx.xxx.xxx"|"<ipaddr2>"|*)
+    HOSTNAME='myhostname'
+    DOMAINNAME='sample1.test'
+    printf %s ${HOSTNAME} > '/proc/sys/kernel/hostname'
+    printf %s ${DOMAINNAME} > '/proc/sys/kernel/domainname'
+  ;;
+esac
+
+printf %s\\n "${HOSTNAME:?}.${DOMAINNAME:?}"
